@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom';
+import './styles.css';
 
 const rootElement = document.querySelector('#root');
 
@@ -13,5 +13,4 @@ const element = (
 
 console.log(element);
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(element);
+ReactDOM.render(element, rootElement);
