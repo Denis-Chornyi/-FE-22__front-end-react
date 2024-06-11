@@ -4,26 +4,17 @@ import './index.scss';
 
 const rootElement = document.querySelector('#root');
 
-export const renderSecons = time => {
-  const seconds = new Date(time).getSeconds();
+const element = (
+  <>
+    <h1 className="title">Todo List</h1>
+    <main className="todo-list">
+      <div className="actions">
+        <input classNames="task-input" type="text" />
+        <button className="btn create-task-btn">Create</button>
+      </div>
+      <ul className="list"></ul>
+    </main>
+  </>
+);
 
-  const backgroundColor = seconds % 2 === 0 ? '#fff' : '#000';
-  const textColor = seconds % 2 !== 0 ? '#fff' : '#000';
-
-  const styles = {
-    color: textColor,
-    backgroundColor
-  };
-
-  const element = (
-    <div className="seconds" style={styles}>
-      {seconds}
-    </div>
-  );
-
-  ReactDOM.render(element, rootElement);
-};
-
-renderSecons(new Date());
-
-setInterval(() => renderSecons(new Date()), 1000);
+ReactDOM.render(element, rootElement);
