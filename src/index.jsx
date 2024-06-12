@@ -12,4 +12,4 @@ const userData = {
 
 const root = document.querySelector('#root');
 
-ReactDOM.render(<Profile user={userData} />, root);
+ReactDOM.render(<Profile userData={userData} />, root);
