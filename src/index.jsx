@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Comment from './Comment';
-
-const rootElement = document.querySelector('#root');
+import Greeting from './Greeting';
 
 const userInfo = {
-  name: 'Tom',
-  author: 'Bob',
-  avatarUrl: 'https://avatars1.githubusercontent.com'
+  firstName: 'John',
+  lastName: 'Doe',
+  birthDate: new Date(2007, 0, 1),
+  age() {
+    const userAge = new Date() - this.birthDate;
+    return Math.floor(userAge / (1000 * 60 * 60 * 24 * 30 * 12));
+  }
 };
 
-ReactDOM.render(<Comment user={userInfo} text="Good job!" date={new Date()} />, rootElement);
+ReactDOM.render(<Greeting user={userInfo} />, document.querySelector('#root'));
