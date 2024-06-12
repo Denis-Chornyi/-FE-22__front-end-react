@@ -1,4 +1,6 @@
-@import './search.scss';
+@import './comment.scss';
+@import './userInfo.scss';
+@import './avatar.scss';
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -7,4 +9,6 @@ body {
 #root {
   height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }

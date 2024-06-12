@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import SearchField from './Search';
+import Comment from './Comment';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<SearchField name="Bob" />, rootElement);
+const userInfo = {
+  name: 'Tom',
+  avatarUrl: 'https://avatars1.githubusercontent.com'
+};
+
+ReactDOM.render(<Comment user={userInfo} text="Good job!" date={new Date()} />, rootElement);
