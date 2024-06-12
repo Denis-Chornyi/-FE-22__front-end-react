@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import SearchField from './Seach';
+import SearchField from './Search';
 
 const rootElement = document.querySelector('#root');
 
