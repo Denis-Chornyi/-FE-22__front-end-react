@@ -8,7 +8,7 @@ const getTimeWithOffset = offset => {
   return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
 };
 
-const formatTime = time => moment(time).format('HH:mm:ss');
+const formatTime = time => moment(time).format('HH:mm:ss a');
 
 class Clock extends Component {
   constructor(props) {
