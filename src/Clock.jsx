@@ -10,6 +10,9 @@ const getTimeWithOffset = offset => {
   return formatTime(new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset)));
 };
 
+const date = offset => formatTime(new Date(new Date().getTime() + offset * 3600000));
+console.log(date(-7));
+
 class Clock extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +22,7 @@ class Clock extends Component {
     };
     setInterval(() => {
       this.setState({
-        clock: getTimeWithOffset(this.state.clock)
+        clock: date(this.state.clock)
       });
     }, 1000);
   }
