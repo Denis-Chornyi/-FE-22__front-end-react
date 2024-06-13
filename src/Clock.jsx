@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import './clock.scss';
 import moment from 'moment';
 
-const getTimeWithOffset = offset => {
-  const currentTime = moment();
-  currentTime.add(offset, 'hours');
-  return currentTime.format('HH:mm:ss A');
-};
+const getTimeWithOffset = offset => moment().utcOffset(offset).format('HH:mm:ss A');
 
 class Clock extends Component {
   constructor(props) {
