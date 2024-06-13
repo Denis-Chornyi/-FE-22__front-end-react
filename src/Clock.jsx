@@ -4,7 +4,7 @@ import moment from 'moment';
 
 const getTimeWithOffset = offset => {
   const currentTime = moment();
-  currentTime.add(offset - 2, 'hours');
+  currentTime.add(offset, 'hours');
   return currentTime.format('HH:mm:ss A');
 };
 
