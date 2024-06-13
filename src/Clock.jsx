@@ -5,7 +5,7 @@ import moment from 'moment';
 const getTimeWithOffset = offset => {
   const currentTime = moment();
   currentTime.add(offset - 2, 'hours');
-  return currentTime.format('HH:mm:ss a');
+  return currentTime.format('HH:mm:ss A');
 };
 
 class Clock extends Component {
