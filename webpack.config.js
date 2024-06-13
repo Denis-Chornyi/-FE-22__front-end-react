@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -9,40 +10,41 @@ module.exports = (env, argv) => {
     entry: './src/index.jsx',
     output: {
       filename: 'bundle.js',
+      path: path.resolve(__dirname, 'build')
     },
     module: {
       rules: [
         {
           test: /.(js|jsx?)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
+          use: ['babel-loader']
         },
         {
           test: /.s?css$/,
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
-            'sass-loader',
-          ],
-        },
-      ],
+            'sass-loader'
+          ]
+        }
+      ]
     },
     resolve: {
-      extensions: ['.js', '.jsx'],
+      extensions: ['.js', '.jsx']
     },
     plugins: [
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: './src/index.html',
-      }),
+        template: './src/index.html'
+      })
     ],
     devServer: {
       historyApiFallback: true,
       open: true,
       hot: true,
-      port: 8080,
-    },
+      port: 1080
+    }
   };
 
   if (isProduction) {
@@ -52,8 +54,8 @@ module.exports = (env, argv) => {
   if (isProduction) {
     config.plugins.push(
       new MiniCssExtractPlugin({
-        filename: '[name].css',
-      }),
+        filename: '[name].css'
+      })
     );
   }
 
