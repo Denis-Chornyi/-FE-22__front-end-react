@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import './clock.scss';
 import moment from 'moment';
 
+const formatTime = time => moment(time).format('HH:mm:ss a');
+
 const getTimeWithOffset = offset => {
   const currentTime = new Date();
   const utcOffset = currentTime.getTimezoneOffset() / 60;
-  return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
+  return formatTime(new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset)));
 };
-
-const formatTime = time => moment(time).format('HH:mm:ss a');
 
 class Clock extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Clock extends Component {
     };
     setInterval(() => {
       this.setState({
-        clock: formatTime(getTimeWithOffset(this.state.clock))
+        clock: getTimeWithOffset(this.state.clock)
       });
     }, 1000);
   }
