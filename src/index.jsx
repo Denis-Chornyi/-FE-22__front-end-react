@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Status from './Status';
+import App from './App';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Status />, rootElement);
+ReactDOM.render(<App />, rootElement);
