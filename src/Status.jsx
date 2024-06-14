@@ -4,7 +4,7 @@ import Offline from './Offline';
 
 class Status extends React.Component {
   state = {
-    isOnline: true
+    isOnline: false
   };
 
   getStatus = () => {
