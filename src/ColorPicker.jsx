@@ -8,16 +8,9 @@ class ColorPicker extends React.Component {
     };
   }
 
-  hoverOn = e => {
-    const color = e.target.getAttribute('data-color');
+  setColor = color => {
     this.setState({
       title: color
-    });
-  };
-
-  hoverOff = () => {
-    this.setState({
-      title: ''
     });
   };
 
@@ -28,23 +21,20 @@ class ColorPicker extends React.Component {
         <div>
           <button
             className="picker__button picker__button_coral"
-            data-color="Coral"
-            onMouseEnter={this.hoverOn}
-            onMouseLeave={this.hoverOff}
+            onMouseEnter={() => this.setColor('Coral')}
+            onMouseLeave={() => this.setColor('')}
           ></button>
 
           <button
             className="picker__button picker__button_aqua"
-            data-color="Aqua"
-            onMouseEnter={this.hoverOn}
-            onMouseLeave={this.hoverOff}
+            onMouseEnter={() => this.setColor('Aqua')}
+            onMouseLeave={() => this.setColor('')}
           ></button>
 
           <button
             className="picker__button picker__button_bisque"
-            data-color="Bisque"
-            onMouseEnter={this.hoverOn}
-            onMouseLeave={this.hoverOff}
+            onMouseEnter={() => this.setColor('Bisque')}
+            onMouseLeave={() => this.setColor('')}
           ></button>
         </div>
       </div>
