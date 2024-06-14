@@ -19,13 +19,13 @@ class Page extends React.Component {
       <div className="page">
         <Info text={this.state.text} />
         <button className="btn" onClick={() => this.setText(text1)}>
-          text1
+          IPhone 13
         </button>
         <button className="btn" onClick={() => this.setText(text2)}>
-          text2
+          IPhone 13 Pro
         </button>
         <button className="btn" onClick={() => this.setText('')}>
-          clear
+          Clear
         </button>
       </div>
     );
