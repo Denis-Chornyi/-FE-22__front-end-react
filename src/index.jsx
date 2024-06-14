@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Counter from './Counter';
+import Colors from './Colors';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Counter />, rootElement);
+ReactDOM.render(<Colors />, rootElement);
