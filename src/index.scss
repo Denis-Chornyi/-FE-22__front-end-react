@@ -13,29 +13,17 @@ body {
   align-items: center;
 }
 
-.login {
-  background-color: green;
+$blue: #6495ed;
+
+.actions {
+  display: flex;
 }
 
-.logout {
-  background-color: cornflowerblue;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.spinner {
-  display: inline-block;
-  border: 3px solid #ccc;
-  border-left-color: transparent;
-  animation: spin 0.5s infinite linear;
-  border-radius: 50%;
+.message {
+  border: 2px solid $blue;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 16px;
 }
 
 .btn {
@@ -48,4 +36,6 @@ body {
   text-transform: uppercase;
   padding: 8px;
   cursor: pointer;
+  background-color: $blue;
+  margin: 8px;
 }
