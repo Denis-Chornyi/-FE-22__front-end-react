@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './Login';
 import Logout from './Logout';
-import Spiner from './Spiner';
+import Spinner from './Spinner';
 
 class Auth extends React.Component {
   state = {
@@ -9,7 +9,7 @@ class Auth extends React.Component {
     isLoading: false
   };
 
-  sizeSpiner = {
+  sizeSpinner = {
     width: '40px',
     height: '40px'
   };
@@ -34,7 +34,7 @@ class Auth extends React.Component {
     const { isLoggedIn, isLoading } = this.state;
     return (
       <>
-        {isLoading && <Spiner size={this.sizeSpiner} />}
+        {isLoading && <Spinner size={this.sizeSpinner} />}
         {!isLoading && (
           <>
             {isLoggedIn ? (
