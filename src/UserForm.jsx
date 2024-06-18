@@ -1,12 +1,16 @@
 import React from 'react';
 
 class UserForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.formRef = React.createRef();
+  }
   handleSubmit = event => {
     event.preventDefault();
     const formData = [...new FormData(this.formRef)].reduce((acc, [name, value]) => ({
       ...acc,
       [name]: value
-    }));
+    }), {});
 
     formData.student === 'on' ? (formData.student = true) : (formData.student = false);
 
