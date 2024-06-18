@@ -1,23 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class UserForm extends Component {
-  formRef = React.createRef();
-
+class UserForm extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
-    const formData = new FormData(this.formRef.current);
-    const formDataObject = {};
+    const formData = [...new FormData(this.formRef)].reduce((acc, [name, value]) => ({
+      ...acc,
+      [name]: value
+    }), {});
+    formData['name'] = 'name-89';
+    formData['student'] = true;
+    formData['occupation'] = 'new-york';
+    formData['about'] = 'I am a student';
+    this.props.onSubmit(formData);
+  };
 
-    formData.forEach((value, key) => {
-      formDataObject[key] = value;
-    });
-
-    this.props.onSubmit(formDataObject);
+  setRef = node => {
+    this.formRef = node;
   };
 
   render() {
     return (
-      <form ref={this.formRef} className="login-form" onSubmit={this.handleSubmit}>
+      <form ref={this.setRef} className="login-form" onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
 
         <div className="form-control">
