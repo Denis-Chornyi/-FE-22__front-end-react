@@ -3,7 +3,7 @@ import UserForm from './UserForm';
 
 class App extends React.Component {
   createUser = userData => {
-    console.log('User Data:', userData);
+    console.log(userData);
   };
 
   render() {
