@@ -7,6 +7,9 @@ class UserForm extends React.Component {
       ...acc,
       [name]: value
     }));
+
+    formData.student === 'on' ? (formData.student = true) : (formData.student = false);
+
     this.props.onSubmit(formData);
   };
 
