@@ -3,12 +3,9 @@ import User from './User';
 import Filter from './Filter';
 
 class UsersList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filterText: ''
-    };
-  }
+  state = {
+    filterText: ''
+  };
 
   handleFilterChange = text => {
     this.setState({ filterText: text });
