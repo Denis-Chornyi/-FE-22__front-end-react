@@ -16,7 +16,7 @@ class UsersList extends React.Component {
     const { filterText } = this.state;
 
     const filteredUsers = users.filter(user =>
-      user.name.toLowerCase().includes(filterText.toLowerCase())
+      user.name.toLowerCase().includes(filterText.toString().toLowerCase())
     );
 
     return (
@@ -35,4 +35,5 @@ class UsersList extends React.Component {
     );
   }
 }
+
 export default UsersList;
