@@ -1,18 +1,15 @@
 import React from 'react';
-import UserForm from './UserForm';
+import UsersList from './UsersList';
 
-class App extends React.Component {
-  createUser = userData => {
-    console.log(userData);
-  };
+const App = () => {
+  const users = [
+    { id: 1, name: 'John Doe', age: 25 },
+    { id: 2, name: 'Bob Doe', age: 18 },
+    { id: 3, name: 'Sam Smith', age: 23 },
+    { id: 4, name: 'John Smith', age: 54 },
+  ];
 
-  render() {
-    return (
-      <div>
-        <UserForm onSubmit={this.createUser} />
-      </div>
-    );
-  }
-}
+  return <UsersList users={users} />;
+};
 
 export default App;
