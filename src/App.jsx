@@ -1,32 +1,33 @@
 import React from 'react';
-import UserProfile from './UserProfile';
-import UserMenu from './UserMenu';
+import ShoppingCart from './ShoppingCart';
+import Profile from './Profile';
 
 class App extends React.Component {
   state = {
-    userData: null
+    userData: {
+      firstName: 'John',
+      lastName: 'Doe'
+    }
   };
 
-  componentDidMount() {
-    this.fetchUserData(this.props.userId);
-  }
-
-  fetchUserData = userId => {
-    fetch(`https://api.github.com/users/${userId}`)
-      .then(response => response.json())
-      .then(userData => {
-        this.setState({
-          userData: userData
-        });
-      });
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      userData: {
+        ...this.state.userData,
+        [name]: value
+      }
+    });
   };
   render() {
+    const { userData } = this.state;
     return (
       <div className="page">
-        <header className="header">
-          <UserMenu userData={this.state.userData} />
-        </header>
-        <UserProfile userData={this.state.userData} />
+        <h1 className="title">{`Hello ${userData.firstName} ${userData.lastName}`}</h1>
+        <main className="content">
+          <ShoppingCart userData={this.state.userData} />
+          <Profile userData={this.state.userData} handleChange={this.handleChange} />
+        </main>
       </div>
     );
   }
