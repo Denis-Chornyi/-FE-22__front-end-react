@@ -7,8 +7,8 @@ class UsersList extends React.Component {
     filterText: ''
   };
 
-  handleFilterChange = text => {
-    this.setState({ filterText: text });
+  handleFilterChange = event => {
+    this.setState({ filterText: event.target.value });
   };
 
   render() {
