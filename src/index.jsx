@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Game from './Game';
-
+import App from './App';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Game />, rootElement);
+ReactDOM.render(<App userId="github" />, rootElement);
