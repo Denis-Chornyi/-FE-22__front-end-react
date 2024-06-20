@@ -19,6 +19,7 @@ class App extends React.Component {
       }
     });
   };
+
   render() {
     const { userData } = this.state;
     const userName = `${userData.firstName} ${userData.lastName}`;
