@@ -22,7 +22,7 @@ class App extends React.Component {
 
   render() {
     const { userData } = this.state;
-    const userName = `${userData.firstName} ${userData.lastName}`;
+    const userName = `${userData.firstName}`;
 
     return (
       <div className="page">
