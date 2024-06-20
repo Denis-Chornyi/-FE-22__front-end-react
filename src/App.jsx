@@ -21,13 +21,13 @@ class App extends React.Component {
   };
   render() {
     const { userData } = this.state;
-    const userName = `${userData.firstName} ${userData.lastName}`; // Формуємо userName
+    const userName = `${userData.firstName} ${userData.lastName}`;
 
     return (
       <div className="page">
         <h1 className="title">{`Hello ${userData.firstName} ${userData.lastName}`}</h1>
         <main className="content">
-          <ShoppingCart userName={userName} /> {/* Передаємо userName */}
+          <ShoppingCart userName={userName} />
           <Profile userData={userData} handleChange={this.handleChange} />
         </main>
       </div>
