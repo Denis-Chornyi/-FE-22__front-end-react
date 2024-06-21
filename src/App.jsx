@@ -1,6 +1,5 @@
 import React from 'react';
-import { SlArrowUp } from 'react-icons/sl';
-import { SlArrowDown } from 'react-icons/sl';
+import { SlArrowUp, SlArrowDown } from 'react-icons/sl';
 
 import Expand from './Expand';
 
@@ -16,7 +15,8 @@ class App extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const icon = isOpen ? <SlArrowDown /> : <SlArrowUp />;
+    const icon = isOpen ? <SlArrowUp /> : <SlArrowDown />;
+
     return (
       <div className="app">
         <button onClick={this.btnExtend} className="expand__toggle-btn">
