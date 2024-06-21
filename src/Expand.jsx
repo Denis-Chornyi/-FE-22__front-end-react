@@ -16,8 +16,7 @@ const Expand = ({ isOpen, children, title }) => {
 Expand.protoType = {
   isOpen: PropTypes.bool,
   children: PropTypes.element,
-  title: PropTypes.string,
-  onClose: PropTypes.func.isRequired
+  title: PropTypes.string
 };
 
 Expand.defaultProps = {
@@ -26,4 +25,3 @@ Expand.defaultProps = {
 };
 
 export default Expand;
-
