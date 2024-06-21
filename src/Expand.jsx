@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SlArrowUp, SlArrowDown } from 'react-icons/sl';
 
-const Expand = ({ isOpen, children, title ,onToggle }) => {
-
+const Expand = ({ isOpen, children, title, onToggle }) => {
   const icon = isOpen ? <SlArrowUp /> : <SlArrowDown />;
 
   return (
