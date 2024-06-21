@@ -1,5 +1,4 @@
 import React from 'react';
-import { SlArrowUp, SlArrowDown } from 'react-icons/sl';
 
 import Expand from './Expand';
 
@@ -15,14 +14,10 @@ class App extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const icon = isOpen ? <SlArrowUp /> : <SlArrowDown />;
 
     return (
       <div className="app">
-        <button onClick={this.btnExtend} className="expand__toggle-btn">
-          {icon}
-        </button>
-        <Expand isOpen={isOpen} title="Some title">
+        <Expand isOpen={isOpen} title="Some title" onToggle={this.btnExtend}>
           <p>
             Hooks are a new addition in React 16.8. They let you use state and other React features
             without writing a class.
