@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SlArrowUp, SlArrowDown } from 'react-icons/sl';
 
-const Expand = ({ isOpen, children, title, onToggle }) => {
-  const icon = isOpen ? <SlArrowUp /> : <SlArrowDown />;
-
+const Expand = ({ icon, isOpen, children, title, onToggle }) => {
   return (
     <div className="expand border">
       <div className="expand__header">
