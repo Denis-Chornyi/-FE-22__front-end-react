@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SlArrowUp, SlArrowDown } from 'react-icons/sl';
 
 class Expand extends React.PureComponent {
   state = {
@@ -13,14 +12,14 @@ class Expand extends React.PureComponent {
   };
   render() {
     const { isOpen } = this.state;
-    const icon = isOpen ? <SlArrowUp /> : <SlArrowDown />;
+    const iconClass = isOpen ? 'fa fa-chevron-up' : 'fa fa-chevron-down';
 
     return (
       <div className="expand border">
         <div className="expand__header">
           <span className="expand__title">{this.props.title}</span>
           <button onClick={this.btnExtend} className="expand__toggle-btn">
-            {icon}
+            <i className={iconClass}></i>
           </button>
         </div>
         {isOpen && <div className="expand__content">{this.props.children}</div>}
