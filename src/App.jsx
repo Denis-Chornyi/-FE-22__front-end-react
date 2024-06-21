@@ -1,17 +1,34 @@
 import React from 'react';
-import FilterableProductTable from './FilterableProductTable';
+import Numbers from './Numbers';
+import EvenNumbers from './EvenNumbers';
+import OddNumbers from './OddNumbers';
 
-const PRODUCTS = [
-  { category: 'Fruits', price: '$1', stocked: true, name: 'Apple' },
-  { category: 'Fruits', price: '$1', stocked: true, name: 'Dragonfruit' },
-  { category: 'Fruits', price: '$2', stocked: false, name: 'Passionfruit' },
-  { category: 'Vegetables', price: '$2', stocked: true, name: 'Spinach' },
-  { category: 'Vegetables', price: '$4', stocked: false, name: 'Pumpkin' },
-  { category: 'Vegetables', price: '$1', stocked: true, name: 'Peas' }
-];
+class App extends React.Component {
+  state = {
+    number: 0
+  };
 
-const App = () => {
-  return <FilterableProductTable products={PRODUCTS} />;
-};
+  componentDidMount() {
+    this.intervalId = setInterval(() => {
+      this.setState({
+        number: this.state.number + 1
+      });
+    }, 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <Numbers title="All numbers" number={this.state.number} />
+        <EvenNumbers title="Even number" number={this.state.number} />
+        <OddNumbers title="Odd number" number={this.state.number} />
+        <Numbers title="All numbers" number={17} />
+      </div>
+    );
+  }
+}
 
 export default App;
