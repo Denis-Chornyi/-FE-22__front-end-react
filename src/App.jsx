@@ -22,7 +22,7 @@ class App extends React.Component {
         <button onClick={this.btnExtend} className="expand__toggle-btn">
           {icon}
         </button>
-        <Expand isOpen={isOpen} title="some title">
+        <Expand isOpen={isOpen} title="Some title">
           <p>
             Hooks are a new addition in React 16.8. They let you use state and other React features
             without writing a class.
