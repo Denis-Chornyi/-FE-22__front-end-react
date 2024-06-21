@@ -21,7 +21,8 @@ const Expand = ({ isOpen, children, title, onToggle }) => {
 Expand.protoType = {
   isOpen: PropTypes.bool,
   children: PropTypes.element,
-  title: PropTypes.string
+  title: PropTypes.string,
+  onToggle: PropTypes.func.isRequired
 };
 
 Expand.defaultProps = {
