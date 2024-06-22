@@ -2,6 +2,7 @@ import React from 'react';
 import Task from './Task';
 import CreCreateTaskInput from './CreateTaskInput';
 import { createTask, fetchTaskList, updateTask, deleteTask } from './taskGateway';
+import PropTypes from 'prop-types';
 
 class TasksList extends React.PureComponent {
   state = {
@@ -61,3 +62,7 @@ class TasksList extends React.PureComponent {
   }
 }
 export default TasksList;
+
+TasksList.propTypes = {
+  tasks: PropTypes.array
+};
