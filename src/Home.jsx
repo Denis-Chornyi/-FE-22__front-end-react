@@ -6,7 +6,7 @@ function Home() {
     <div className="page__content">
       <h1>🏠</h1>
       <Link to='/products'>
-      To products
+        To Products
       </Link>
     </div>
   );
