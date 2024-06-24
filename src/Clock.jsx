@@ -7,14 +7,14 @@ const Clock = ({ location, offset }) => {
   const [clock, setClock] = useState(getTimeWithOffset(offset));
 
   useEffect(() => {
-    const intetval = setInterval(() => {
+    const interval = setInterval(() => {
       setClock(getTimeWithOffset(offset));
     }, 1000);
 
     return () => {
-      clearInterval(intetval);
+      clearInterval(interval);
     };
-  });
+  }, [offset]);
 
   return (
     <div className="clock">
