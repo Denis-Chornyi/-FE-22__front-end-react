@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: flex;
+}
+
+.board-row {
+  height: 35px;
+
+  &:last-child {
+    border-bottom: 2px solid gray;
+  }
+}
+
+.square {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+  border-right: none;
+  cursor: pointer;
+  outline: 0;
+  
+
+  &:last-child {
+    border-right: 2px solid gray;
+  }
+}
